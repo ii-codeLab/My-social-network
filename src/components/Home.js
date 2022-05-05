@@ -1,16 +1,15 @@
 import { onNavigate } from "../main.js";
 
-export const Home = () =>{
-    const HomeDiv = document.createElement('div');
-    const nodoH1 = document.createElement('h1');
-    const buttonLogIn = document.createElement('button');
+export const home = () =>{
+    const homeSection = document.createElement('section');
+    const nodoH2 = document.createElement('h2');
+    const buttonLogOut = document.createElement('button');
 
-    
-    buttonLogIn.textContent = 'logIn';
-    buttonLogIn.addEventListener('click', () =>{
-        onNavigate('/register');
+    nodoH2.textContent = 'This is the principal view'
+    buttonLogOut.textContent = 'logout';
+    buttonLogOut.addEventListener('click', () =>{
+        onNavigate('/');
     });
-    nodoH1.textContent = 'This is the "logIn" view'
-    HomeDiv.append(nodoH1, buttonLogIn);
-    return HomeDiv;
+    homeSection.append(nodoH2, buttonLogOut);
+    return homeSection;
 };
