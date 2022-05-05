@@ -1,18 +1,14 @@
 // Este es el punto de entrada de tu aplicacion
-//import { myFunction } from './lib/login';
-
-import { Home } from './components/Home.js';
-import { Register } from './components/Register.js';
-//import { contact } from './components/contact.js';
-//import { about } from './components/about.js';
+import { logIn } from './components/logIn.js';
+import { home } from './components/home.js';
 
 
 //myFunction();
 const rootSection = document.getElementById('root');
 
 const routes = {
-    '/' : Home,
-    '/register' : Register, 
+    '/' : logIn, 
+    '/home' : home, 
   };
   
 
@@ -30,6 +26,7 @@ export const onNavigate = (pathname) => {
 
 window.onpopstate = () => {
     rootSection.appendChild(routes[window.location.pathname]());
+    
   };
 
 let compon = routes[window.location.pathname];
