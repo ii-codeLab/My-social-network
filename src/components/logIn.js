@@ -16,11 +16,12 @@ export const logIn = () =>{
         onNavigate('/home');
     });
     welcomeLine.textContent = 'Welcome to';
-
+    appLogo.setAttribute('alt', 'logo image');
+    appLogo.setAttribute('src', './images/logoApp.png')
     appName.textContent = 'abstarct';
     slogan.textContent = 'A cool place to improve your english!';
     logInsection.append(welcomeSection,buttonGoogleLogIn);
-    welcomeSection.append(welcomeLine, appLogo, appName);
+    welcomeSection.append(welcomeLine, appLogo, appName, slogan);
 
     return logInsection;
 };
