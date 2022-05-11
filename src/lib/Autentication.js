@@ -3,7 +3,7 @@ import { getAuth,
     signInWithRedirect,
     getRedirectResult,
  } from './Firebase.js'; 
-import { onNavigate } from '../main.js';
+//import { onNavigate } from '../main.js';
 import instApp from './FirebaseConfiguration.js';
 
 instApp();
