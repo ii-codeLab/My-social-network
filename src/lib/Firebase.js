@@ -6,5 +6,5 @@ export { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase
 export {
     getAuth, 
     GoogleAuthProvider, 
-    signInWithRedirect
+    signInWithPopup,
 } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js';
