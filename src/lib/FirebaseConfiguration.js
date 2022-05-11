@@ -1,5 +1,7 @@
 import { initializeApp } from './Firebase.js';
 
+export default function instApp(){
+//-------------- Firebase configuration ---------------------------
 const firebaseConfig = {
     apiKey: "AIzaSyCkRD5a2R7WHSA1xL8rXnvlIUekhpuspqY",
     authDomain: "abstractsocialnetwork.firebaseapp.com",
@@ -10,4 +12,6 @@ const firebaseConfig = {
   };
 
   // Initialize Firebase
+
   const app = initializeApp(firebaseConfig);
+}
