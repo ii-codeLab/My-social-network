@@ -1,4 +1,6 @@
-import { onNavigate } from "../main.js";
+import { onNavigate } from '../main.js';
+import { loginGoogle } from '../Autentication.js';
+
 
 export const logIn = () =>{
     const logInsection = document.createElement('section');
@@ -8,20 +10,34 @@ export const logIn = () =>{
     const  appName = document.createElement('h1');
     const slogan = document.createElement('p');
     const buttonGoogleLogIn = document.createElement('button');
-
-
+    // Contenedor alerta de Google
+    const alertGoogle = document.createElement('div');
     
-    buttonGoogleLogIn.textContent = 'logIn';
-    buttonGoogleLogIn.addEventListener('click', () =>{
-        onNavigate('/home');
-    });
     welcomeLine.textContent = 'Welcome to';
     appLogo.setAttribute('alt', 'logo image');
     appLogo.setAttribute('src', './images/logoApp.png')
     appName.textContent = 'abstarct';
     slogan.textContent = 'A cool place to improve your english!';
-    logInsection.append(welcomeSection,buttonGoogleLogIn);
+    
+    logInsection.append(welcomeSection,buttonGoogleLogIn, alertGoogle);
     welcomeSection.append(welcomeLine, appLogo, appName, slogan);
+    
+    buttonGoogleLogIn.textContent = 'logIn';
+
+    /*buttonGoogleLogIn.addEventListener('click', () =>{
+        onNavigate('/home');
+    });*/
+
+    buttonGoogleLogIn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const userGoogle = await loginGoogle();
+        if (!userGoogle) {
+          alertGoogle.innerHTML = '<span class="red"> Error al iniciar sesión </span>';
+        } else {
+          alertGoogle.innerHTML = '';
+          onNavigate('/home');
+        }
+      });
 
     return logInsection;
 };
