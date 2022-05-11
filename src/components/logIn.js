@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { loginGoogle } from '../Autentication.js';
+
 
 
 export const logIn = () =>{
@@ -24,20 +24,8 @@ export const logIn = () =>{
     
     buttonGoogleLogIn.textContent = 'logIn';
 
-    /*buttonGoogleLogIn.addEventListener('click', () =>{
+    buttonGoogleLogIn.addEventListener('click', () =>{
         onNavigate('/home');
-    });*/
-
-    buttonGoogleLogIn.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const userGoogle = await loginGoogle();
-        if (!userGoogle) {
-          alertGoogle.innerHTML = '<span class="red"> Error al iniciar sesión </span>';
-        } else {
-          alertGoogle.innerHTML = '';
-          onNavigate('/home');
-        }
-      });
-
+    });
     return logInsection;
 };
