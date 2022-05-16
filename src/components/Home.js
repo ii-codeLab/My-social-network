@@ -9,6 +9,7 @@ export const home = () =>{
     const logoApp = document.createElement('img');
     const topMessage = document.createElement('h2');    
     const buttonLogOut = document.createElement('button');
+
     const containerWords = document.createElement('section');
     const advise = document.createElement('p');
     const section1 = document.createElement('section');
@@ -18,14 +19,25 @@ export const home = () =>{
     const word2 = document.createElement('p');
     const word3 = document.createElement('p');
 
+    const allPostSection = document.createElement('section');
+    const postSection = document.createElement('section');
+    const postInput = document.createElement('input');
+    const submitPost = document.createElement('input');
+
     logoApp.setAttribute('alt', 'logo image');
     logoApp.setAttribute('src', './images/logoApp.png');
+    
     topMessage.textContent= 'Time to  imagine and play!';
     buttonLogOut.textContent = 'logout';
     advise.textContent = 'Words of the week:';
     word1.textContent = 'chicken';
     word2.textContent = 'park';
     word3.textContent = 'eat';
+
+    postInput.setAttribute('type', 'text');
+    submitPost.setAttribute('type', 'submit');
+    submitPost.setAttribute('value', 'post');
+
 
 //-------------- Incorporación de log Out al botón ----------------------------------
     buttonLogOut.addEventListener('click', (e) =>{
@@ -43,6 +55,8 @@ export const home = () =>{
     section2.appendChild(word2);
     section3.appendChild(word3);
     containerWords.append(advise, section1, section2, section3);
-    homeSection.append(homeHeader, containerWords);
+    postSection.append(postInput, submitPost);
+    allPostSection.appendChild(postSection);
+    homeSection.append(homeHeader, containerWords, allPostSection);
     return homeSection;
 };
