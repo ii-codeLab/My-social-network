@@ -1,6 +1,6 @@
 import { onNavigate } from '../main.js';
-import { auth, provider} from '../lib/firebaseConfig.js'
-import { signInWithRedirect, getRedirectResult  } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js"
+import { auth, provider} from '../lib/firebaseConfig.js';
+import { signInWithRedirect, getRedirectResult  } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js';
 
 export const logIn = () =>{
     const logInsection = document.createElement('section');
