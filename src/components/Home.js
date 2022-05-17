@@ -44,11 +44,12 @@ export const home = () =>{
 //-------------- Incorporación de log Out al botón ----------------------------------
     buttonLogOut.addEventListener('click', (e) =>{
         signOut(auth).then(() => {
-        // Sign-out successful.
+        onNavigate('/')
+        console.log("se cerró")
         }).catch((error) => {
-        // An error happened.
+        console.log(error);
         });
-        onNavigate('/');
+        
     });
 
 //--------------- Traer el texto escrito en el post ----------------------------------
