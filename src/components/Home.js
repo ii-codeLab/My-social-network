@@ -22,7 +22,7 @@ export const home = () =>{
 
     const allPostSection = document.createElement('section');
     const postSection = document.createElement('section');
-    const postInput = document.createElement('input');
+    const postText = document.createElement('textarea');
     const submitBotton = document.createElement('input');
 
     logoApp.setAttribute('alt', 'logo image');
@@ -35,7 +35,6 @@ export const home = () =>{
     word2.textContent = 'park';
     word3.textContent = 'eat';
 
-    postInput.setAttribute('type', 'text');
     submitBotton.setAttribute('type', 'submit');
     submitBotton.setAttribute('value', 'post');
 
@@ -54,7 +53,7 @@ export const home = () =>{
 
 //--------------- Traer el texto escrito en el post ----------------------------------
     submitBotton.addEventListener('click', ()=>{
-        const textPost = postInput.value
+        const textPost = postText.value
         addNote(textPost);
     });
 
@@ -64,7 +63,7 @@ export const home = () =>{
     section2.appendChild(word2);
     section3.appendChild(word3);
     containerWords.append(advise, section1, section2, section3);
-    postSection.append(postInput, submitBotton);
+    postSection.append(postText, submitBotton);
     allPostSection.appendChild(postSection);
     homeSection.append(homeHeader, containerWords, allPostSection);
     return homeSection;
