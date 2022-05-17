@@ -22,11 +22,11 @@ export const home = () =>{
     const allPostSection = document.createElement('section');
     const postSection = document.createElement('section');
     const postInput = document.createElement('input');
-    const submitPost = document.createElement('input');
+    const submitBotton = document.createElement('input');
 
     logoApp.setAttribute('alt', 'logo image');
     logoApp.setAttribute('src', './images/logoApp.png');
-    
+
     topMessage.textContent= 'Time to  imagine and play!';
     buttonLogOut.textContent = 'logout';
     advise.textContent = 'Words of the week:';
@@ -35,8 +35,9 @@ export const home = () =>{
     word3.textContent = 'eat';
 
     postInput.setAttribute('type', 'text');
-    submitPost.setAttribute('type', 'submit');
-    submitPost.setAttribute('value', 'post');
+    submitBotton.setAttribute('type', 'submit');
+    submitBotton.setAttribute('value', 'post');
+
 
 
 //-------------- Incorporación de log Out al botón ----------------------------------
@@ -49,13 +50,19 @@ export const home = () =>{
         onNavigate('/');
     });
 
+//--------------- Traer el texto escrito en el post ----------------------------------
+    submitBotton.addEventListener('click', ()=>{
+        const textPost = postInput.value
+        console.log(textPost);
+    });
+
 //--------------- Herencia de nodos ---------------------------------------------------
     homeHeader.append(logoApp, topMessage, buttonLogOut);
     section1.appendChild(word1);
     section2.appendChild(word2);
     section3.appendChild(word3);
     containerWords.append(advise, section1, section2, section3);
-    postSection.append(postInput, submitPost);
+    postSection.append(postInput, submitBotton);
     allPostSection.appendChild(postSection);
     homeSection.append(homeHeader, containerWords, allPostSection);
     return homeSection;
