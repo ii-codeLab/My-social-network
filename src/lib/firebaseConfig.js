@@ -18,3 +18,10 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider(app);
+
+// crear función export addNote, con texto como parámetro
+// Mandar a llamar como parámetro imputPost en home 
+
+export function addNote (text){
+  console.log(text);
+}
