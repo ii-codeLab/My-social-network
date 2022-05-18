@@ -1,0 +1,133 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    /*background-color: black;*/
+}
+
+.homeSection{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+header{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 70px;
+    /*background-color: aquamarine;*/
+}
+
+.logoContainer{
+    width: 73px;
+    height: 100%;
+    display: flex;
+    /*background-color: black;*/
+}
+
+h2{
+    margin-top: 25px;
+    display: inline;
+    font-size: 22px;
+}
+
+#buttonLogOut{
+    margin-top: 15px;
+    padding: 15px;
+    padding-right: 25px;
+    padding-left: 25px;
+    background-color: black;
+
+    font-size: 18px;
+    
+    color: aliceblue;
+}
+
+#advise{
+    margin-top: 70px;
+    padding-top: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    /*background-color: rgb(226, 214, 43);*/
+
+}
+
+.containerWords{
+    width: 100vw;
+    margin-top: 0;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /*background-color: rgb(0, 162, 255);*/
+}
+
+.containerWords p{
+    display: inline;
+    margin-top: 0;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: rgb(14, 13, 13);
+
+    font-size: 25px;
+
+}
+
+.allPostSection{
+    width: 100vw;
+    height: 500px;
+    /*background-color: rgba(228, 199, 39, 0.699);*/
+    display: flex;
+    justify-content: space-around;
+}
+
+.postSection{
+    width: 80%;
+    height: 35%;
+    border-radius: 15px;
+    /*background-color: rgb(174, 216, 78);*/
+}
+
+#postText{
+    display: block;
+    width: 350px;
+    height: 130px;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 15px;
+
+    font-size: 22px;
+}
+
+#submitBotton{
+    position: relative;
+    top: -45px;
+    left: 310px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: rgb(77, 77, 77);
+    border-radius: 10px;
+
+    font-size: 18px;
+    background-color: rgb(255, 253, 253);
+}

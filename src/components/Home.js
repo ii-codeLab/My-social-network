@@ -6,16 +6,15 @@ import { addNote } from '../lib/firebaseConfig.js';
 export const home = () =>{
 //---------------------- CREACIÓN DE NODOS -----------------------------------------
     const homeSection = document.createElement('section');
+
     const homeHeader = document.createElement('header');
+    const logoContainer = document.createElement('section');
     const logoApp = document.createElement('img');
     const topMessage = document.createElement('h2');    
     const buttonLogOut = document.createElement('button');
 
+    const advise = document.createElement('h3');
     const containerWords = document.createElement('section');
-    const advise = document.createElement('p');
-    const section1 = document.createElement('section');
-    const section2 = document.createElement('section');
-    const section3 = document.createElement('section');
     const word1 = document.createElement('p');
     const word2 = document.createElement('p');
     const word3 = document.createElement('p');
@@ -25,9 +24,17 @@ export const home = () =>{
     const postText = document.createElement('textarea');
     const submitBotton = document.createElement('input');
 
+    homeSection.className = 'homeSection';
+    advise.setAttribute('id', 'advise');
+    logoContainer.className = 'logoContainer';
+    allPostSection.className = 'allPostSection';
+    postSection.className = 'postSection';
+    containerWords.className = 'containerWords';
+    
     logoApp.setAttribute('alt', 'logo image');
     logoApp.setAttribute('src', './images/logoApp.png');
-
+    buttonLogOut.setAttribute('id', 'buttonLogOut');
+    
     topMessage.textContent= 'Time to  imagine and play!';
     buttonLogOut.textContent = 'logout';
     advise.textContent = 'Words of the week:';
@@ -35,9 +42,10 @@ export const home = () =>{
     word2.textContent = 'park';
     word3.textContent = 'eat';
 
+    postText.setAttribute('id', 'postText');
     submitBotton.setAttribute('type', 'submit');
     submitBotton.setAttribute('value', 'post');
-
+    submitBotton.setAttribute('id', 'submitBotton');
 
 
 //-------------- Incorporación de log Out al botón ----------------------------------
@@ -58,13 +66,14 @@ export const home = () =>{
     });
 
 //--------------- Herencia de nodos ---------------------------------------------------
-    homeHeader.append(logoApp, topMessage, buttonLogOut);
-    section1.appendChild(word1);
-    section2.appendChild(word2);
-    section3.appendChild(word3);
-    containerWords.append(advise, section1, section2, section3);
+    logoContainer.appendChild(logoApp);
+    homeHeader.append(logoContainer, topMessage, buttonLogOut);
+    containerWords.append( word1, word2, word3);
     postSection.append(postText, submitBotton);
     allPostSection.appendChild(postSection);
-    homeSection.append(homeHeader, containerWords, allPostSection);
+    homeSection.append(homeHeader, advise,containerWords, allPostSection);
+
+    
+
     return homeSection;
 };
