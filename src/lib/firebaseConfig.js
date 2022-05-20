@@ -4,6 +4,7 @@ import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCkRD5a2R7WHSA1xL8rXnvlIUekhpuspqY",
@@ -21,7 +22,3 @@ export const provider = new GoogleAuthProvider(app);
 
 // crear función export addNote, con texto como parámetro
 // Mandar a llamar como parámetro imputPost en home 
-
-export function addNote (text){
-  console.log(text);
-}

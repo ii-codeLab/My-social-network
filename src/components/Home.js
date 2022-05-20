@@ -1,7 +1,7 @@
-import { onNavigate } from '../main.js';
+
 import { auth} from '../lib/firebaseConfig.js';
 import { signOut } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js';
-import { addNote } from '../lib/firebaseConfig.js';
+import { addPost } from '../lib/fireStore.js';
 
 export const home = () =>{
 //---------------------- CREACIÓN DE NODOS -----------------------------------------
@@ -60,8 +60,12 @@ export const home = () =>{
 
 //--------------- Traer el texto escrito en el post ----------------------------------
     submitBotton.addEventListener('click', ()=>{
-        const textPost = postText.value
-        addNote(textPost);
+        postText.value
+        addPost(postText.value).then(()=>{
+            postText.value = '';
+        }).catch(()=>{
+            console.log('fail');
+        })
     });
 
 //--------------- Herencia de nodos ---------------------------------------------------
