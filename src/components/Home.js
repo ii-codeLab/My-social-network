@@ -75,8 +75,5 @@ export const home = () =>{
     postSection.append(postText, submitBotton);
     allPostSection.appendChild(postSection);
     homeSection.append(homeHeader, advise,containerWords, allPostSection);
-
-    
-
     return homeSection;
 };
