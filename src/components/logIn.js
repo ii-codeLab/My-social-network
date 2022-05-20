@@ -46,7 +46,7 @@ export const logIn = () =>{
     // ...
   });
 
-        onNavigate('/home');
+        //onNavigate('/home');
     });
     return logInsection;
 };

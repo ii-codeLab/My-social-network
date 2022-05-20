@@ -51,7 +51,6 @@ export const home = () =>{
 //-------------- Incorporación de log Out al botón ----------------------------------
     buttonLogOut.addEventListener('click', (e) =>{
         signOut(auth).then(() => {
-        onNavigate('/')
         console.log("se cerró")
         }).catch((error) => {
         console.log(error);

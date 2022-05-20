@@ -1,6 +1,8 @@
 // Este es el punto de entrada de tu aplicacion
+import { getAuth, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js"
 import { logIn } from './components/logIn.js';
 import { home } from './components/home.js';
+
 
 
 //myFunction();
@@ -31,3 +33,11 @@ window.onpopstate = () => {
 
 let compon = routes[window.location.pathname];
 rootSection.appendChild(compon());
+
+onAuthStateChanged(getAuth(), (user) => {
+  if (user) {
+    onNavigate('/home');
+  } else {
+    onNavigate('/')
+  }
+});
