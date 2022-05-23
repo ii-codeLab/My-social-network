@@ -4,11 +4,10 @@ import { app } from '../lib/firebaseConfig.js';
 const db = getFirestore(app);
 
 // Add a new document with a generated id.
-export const addPost = async (text)=>{
- await addDoc(collection(db, 'text'), {text})
-    console.log(text, 'carlos');
+export const addPost = (text)=>
+  addDoc(collection(db, 'text'), {text});
 
   //console.log('Document written with ID: ', addPost.id);
-}
+
 
 
