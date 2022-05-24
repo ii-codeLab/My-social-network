@@ -93,10 +93,12 @@ h2{
 
 .allPostSection{
     width: 100vw;
-    height: 500px;
+    height: 100vh;
     /*background-color: rgba(228, 199, 39, 0.699);*/
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .postSection{

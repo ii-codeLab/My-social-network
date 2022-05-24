@@ -2,6 +2,7 @@
 import { auth} from '../lib/firebaseConfig.js';
 import { signOut } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js';
 import { addPost } from '../lib/fireStore.js';
+import { showedPost } from '../components/post.js';
 
 export const home = () =>{
 //---------------------- CREACIÓN DE NODOS -----------------------------------------
@@ -23,6 +24,7 @@ export const home = () =>{
     const postSection = document.createElement('section');
     const postText = document.createElement('textarea');
     const submitBotton = document.createElement('input');
+    
 
     homeSection.className = 'homeSection';
     advise.setAttribute('id', 'advise');
@@ -73,7 +75,9 @@ export const home = () =>{
     homeHeader.append(logoContainer, topMessage, buttonLogOut);
     containerWords.append( word1, word2, word3);
     postSection.append(postText, submitBotton);
-    allPostSection.appendChild(postSection);
+    allPostSection.append(postSection, showedPost());
+    console.log(showedPost());
     homeSection.append(homeHeader, advise,containerWords, allPostSection);
+
     return homeSection;
 };
