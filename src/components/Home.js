@@ -77,7 +77,6 @@ export const home = () =>{
     containerWords.append( word1, word2, word3);
     postSection.append(postText, submitBotton);
     allPostSection.append(postSection, showedPost());
-    console.log(showedPost());
     homeSection.append(homeHeader, advise,containerWords, allPostSection);
 
     return homeSection;

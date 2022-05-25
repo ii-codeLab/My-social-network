@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc, getDocs, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js';
 import { app } from '../lib/firebaseConfig.js';
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js"
 
@@ -13,3 +13,5 @@ export const addPost = (text)=>
 export const getPost = () => getDocs(collection(db, 'text'));
 
 export const onGetPosts = (callback) => onSnapshot(collection(db, 'text'), callback);
+
+export const deletePost = id => deleteDoc(doc(db, 'text', id));

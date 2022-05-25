@@ -1,4 +1,4 @@
-import { onGetPosts } from '../lib/fireStore.js';
+import { onGetPosts, deletePost } from '../lib/fireStore.js';
 
 const showedPost = () =>{
     const paintAllPosts = document.createElement('section');
@@ -15,15 +15,27 @@ const showedPost = () =>{
             const contentPost = postData.text;
             const containerPost = document.createElement('section');
             const textWrote = document.createElement('p');
+            const btn = document.createElement('button');
 
             containerPost.className = 'containerPost';
+            btn.className = 'btnDelete';
+
+            btn.setAttribute('data-id', doc.id)
 
             textWrote.textContent = contentPost;
-            containerPost.appendChild(textWrote);
+            containerPost.append(textWrote, btn);
+            btn.textContent = 'delete';
             
             paintAllPosts.appendChild(containerPost);
             //console.log(paintAllPosts);
+            const btnsDelete = containerPost.querySelectorAll('.btnDelete');
+            btnsDelete.forEach(btn =>{
+            btn.addEventListener('click', ({target:{ dataset }}) => {
+            deletePost(dataset.id);
+                })
+            })
         });
+        
         
     });
         
