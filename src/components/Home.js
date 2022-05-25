@@ -45,6 +45,7 @@ export const home = () =>{
     word3.textContent = 'eat';
 
     postText.setAttribute('id', 'postText');
+    postText.setAttribute('placeholder', 'Creat the craziest story and post it!');
     submitBotton.setAttribute('type', 'submit');
     submitBotton.setAttribute('value', 'post');
     submitBotton.setAttribute('id', 'submitBotton');
