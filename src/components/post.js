@@ -31,7 +31,8 @@ const showedPost = () =>{
             const btnsDelete = containerPost.querySelectorAll('.btnDelete');
             btnsDelete.forEach(btn =>{
             btn.addEventListener('click', ({target:{ dataset }}) => {
-            deletePost(dataset.id);
+                deletePost(dataset.id);
+                    
                 })
             })
         });
