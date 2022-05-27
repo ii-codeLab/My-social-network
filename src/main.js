@@ -37,6 +37,14 @@ rootSection.appendChild(compon());
 onAuthStateChanged(getAuth(), (user) => {
   if (user) {
     onNavigate('/home');
+    const displayName = user.displayName;
+          const email = user.email;
+          const emailVerified = user.emailVerified;
+          const photoURL = user.photoURL;
+          const isAnonymous = user.isAnonymous;
+          const uid = user.uid;
+          const providerData = user.providerData;
+          console.log(providerData)
   } else {
     onNavigate('/')
   }
