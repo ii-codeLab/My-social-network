@@ -181,12 +181,10 @@ textarea:focus, input:focus{
     height: 25px;
     margin-top: 25px;
     margin-right: 10px;
-    border-color: rgb(77, 77, 77);
+    border-color: rgb(212, 57, 57);
     border-radius: 10px;
+    background-color: transparent;
 
     font-size: 14px;
-}
-
-@media screen {
-    min-width: 350px;
+    
 }
