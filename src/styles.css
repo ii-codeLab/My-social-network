@@ -103,7 +103,7 @@ h2{
 
 .postSection{
     width: 60vw;
-    height: 35vh;
+    height: 20vh;
     margin-top: 30px;
     border: 1px solid;
     border-radius: 15px;
@@ -116,10 +116,11 @@ h2{
 
 #postText{
     width: 90%;
-    height: 70%;
+    height: 100%;
     padding: 20px;
     border: 1px transparent;
     border-radius: 15px;
+    background-color: transparent;
 
     font-size: 22px;
 
@@ -162,7 +163,15 @@ textarea:focus, input:focus{
     border-radius: 10px;
 }
 
-.containerPost p{
+.author{
+    position: relative;
+    margin-top: -50px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: rgb(254, 254, 255);
+}
+
+.textWrote{
     margin: 0 auto;
     padding: 10px;
 }
@@ -176,4 +185,8 @@ textarea:focus, input:focus{
     border-radius: 10px;
 
     font-size: 14px;
+}
+
+@media screen {
+    min-width: 350px;
 }

@@ -16,17 +16,21 @@ const showedPost = () =>{
             const postAuthor = postData.displayName;
             const contentPost = postData.text;
             const containerPost = document.createElement('section');
+            const author = document.createElement('p');
             const textWrote = document.createElement('p');
             const btn = document.createElement('button');
 
             containerPost.className = 'containerPost';
+            author.className = 'author';
+            textWrote.className = 'textWrote';
             btn.className = 'btnDelete';
 
             btn.setAttribute('data-id', doc.id);
             btn.setAttribute('name', auth.currentUser.displayName);
 
+            author.textContent = postAuthor;
             textWrote.textContent = contentPost;
-            containerPost.append(textWrote, btn);
+            containerPost.append(author, textWrote, btn);
             btn.textContent = 'delete';
             
             paintAllPosts.appendChild(containerPost);
