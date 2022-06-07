@@ -6,21 +6,29 @@ export const logIn = () =>{
     const logInsection = document.createElement('section');
     const welcomeSection = document.createElement('section');
     const welcomeLine = document.createElement('p');
+    const imgContainer = document.createElement('section');
     const appLogo = document.createElement('img');
     const  appName = document.createElement('h1');
     const slogan = document.createElement('p');
     const buttonGoogleLogIn = document.createElement('button');
     // Contenedor alerta de Google
-    const alertGoogle = document.createElement('div');
+    //const alertGoogle = document.createElement('div');
     
+    logInsection.className = 'logInsection';
+    welcomeSection.className = 'welcomeSection';
+    welcomeLine.setAttribute('id','welcomeLine');
     welcomeLine.textContent = 'Welcome to';
+    imgContainer.className = 'imgContainer';
     appLogo.setAttribute('alt', 'logo image');
     appLogo.setAttribute('src', './images/logoApp.png')
-    appName.textContent = 'abstarct';
+    appName.textContent = 'abstract';
+    slogan.className = 'slogan';
     slogan.textContent = 'A cool place to improve your english!';
-    
-    logInsection.append(welcomeSection,buttonGoogleLogIn, alertGoogle);
-    welcomeSection.append(welcomeLine, appLogo, appName, slogan);
+    buttonGoogleLogIn.setAttribute('id', 'btnGoogleLogIn')
+
+    logInsection.append(welcomeSection,buttonGoogleLogIn);
+    imgContainer.appendChild(appLogo);
+    welcomeSection.append(welcomeLine, imgContainer, appName, slogan);
     
     buttonGoogleLogIn.textContent = 'logIn';
 

@@ -16,29 +16,49 @@ const showedPost = () =>{
             const postAuthor = postData.displayName;
             const contentPost = postData.text;
             const containerPost = document.createElement('section');
+            const author = document.createElement('p');
             const textWrote = document.createElement('p');
-            const btn = document.createElement('button');
+            const btnDelete = document.createElement('button');
+            const btnEdit = document.createElement('button');
 
             containerPost.className = 'containerPost';
-            btn.className = 'btnDelete';
+            author.className = 'author';
+            textWrote.className = 'textWrote';
+            btnDelete.className = 'btnDelete';
+            btnEdit.className = 'btnEdit';
 
-            btn.setAttribute('data-id', doc.id);
-            btn.setAttribute('name', auth.currentUser.displayName);
+            btnDelete.setAttribute('data-id', doc.id);
+            btnDelete.setAttribute('name', auth.currentUser.displayName);
+            btnEdit.setAttribute('data-id', doc.id);
+            btnEdit.setAttribute('name', auth.currentUser.displayName);
 
+            author.textContent = postAuthor;
             textWrote.textContent = contentPost;
-            containerPost.append(textWrote, btn);
-            btn.textContent = 'delete';
+            containerPost.append(author, textWrote, btnEdit, btnDelete);
+            btnDelete.textContent = 'delete';
+            btnEdit.textContent = 'edit';
             
             paintAllPosts.appendChild(containerPost);
             //console.log(paintAllPosts);
             const btnsDelete = containerPost.querySelectorAll('.btnDelete');
             btnsDelete.forEach(btn =>{
             btn.addEventListener('click', ({target:{ dataset }}) => {
-                if(postAuthor == btn.getAttribute('name') ){
+                if(postAuthor == btnDelete.getAttribute('name') ){
                     deletePost(dataset.id);
                     }
                 })
             })
+
+            /*const btnsEdit = containerPost.querySelectorAll('.btnEdit');
+            btnsEdit.forEach(btn =>{
+                btn.addEventListener('click', async (e) => {
+                   const doc = await getPost(e.target.dataset.id)
+                   const post = doc.data();
+                   
+                   contentPost.value
+                })
+            })*/
+
         });
         
         
